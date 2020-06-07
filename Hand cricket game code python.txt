@@ -1,0 +1,41 @@
+import random
+print("*-----------------------------------------------------*")
+print("Hi, Welcome to Hand Cricket")
+
+print("Enter your name")
+cont=input()
+print("Lets play the game")
+score=0
+l=[1,2,3,4,5,6,7,8,9]
+for i in range(30000):
+    print(cont,"turn:")
+    contval=int(input())
+    #print(contval)
+    if((0<contval)and(contval<=9)):
+        score=score+contval
+    print("My turn:")
+    random.shuffle(l)
+    print(l[0])
+    if(contval==l[0]):
+        print(cont,"score is:",score)
+        break
+score1=0
+for i in range(30000):
+    print(cont,"turn:")
+    contval=int(input())
+    print("My turn:")
+    random.shuffle(l)
+    print(l[0])
+    score1=score1+l[0]
+    if(contval==l[0]):
+        print("My score is:",score1)
+        break
+if(score>score1):
+    print(cont,"is winner")
+elif(score==score1):
+    print("No one wins")
+else:
+    print("I'm winner")
+print("Thanks for playing")
+print("*-----------------------------------------------------*")
+    
