@@ -1,41 +1,349 @@
+from tkinter import *
 import random
-print("*-----------------------------------------------------*")
-print("Hi, Welcome to Hand Cricket")
+def butc1():
+    frame1=Frame(root,width=400,height=300,bg="darkblue").place(x=650,y=200)
+    but2=Button(root,text="1 ",fg="black",bg="red",command=butc2).place(x=770,y=200)
+    butc2.counter=0
+    but3=Button(root,text="2 ",fg="black",bg="red",command=butc3).place(x=790,y=200)
+    butc3.counter=0
+    but4=Button(root,text="3 ",fg="black",bg="red",command=butc4).place(x=810,y=200)
+    butc4.counter=0
+    but5=Button(root,text="4 ",fg="black",bg="red",command=butc5).place(x=830,y=200)
+    butc5.counter=0
+    but6=Button(root,text="5 ",fg="black",bg="red",command=butc6).place(x=850,y=200)
+    butc6.counter=0
+    but7=Button(root,text="6 ",fg="black",bg="red",command=butc7).place(x=870,y=200)
+    butc7.counter=0
+def quit(root):
+    s="Game End"
+    lable11=Label(root,text="Press Boll Button for Bolling",fg="black",bg="red",font=('times', 12, 'italic')).place(x=750,y=600)
+    but8=Button(root,text="  Boll    ",bg='red',font=('times', 12, 'italic'),command=buttonc8).place(x=790,y=650)
+def butc2():
+    i=1
+    butc2.counter+=1
+    butc2.q=(1*butc2.counter)+(2*butc3.counter)+(3*butc4.counter)+(4*butc5.counter)+(5*butc6.counter)+(6*butc7.counter)
+    lable3=Label(root,text="Your number:",fg="black",bg="red").place(x=650,y=250)
+    msg1=Message(root,text=i,fg="black").place(x=680,y=270)
+    l=[1,2,3,4,5,6]
+    butc2.q=(1*butc2.counter)+(2*butc3.counter)+(3*butc4.counter)+(4*butc5.counter)+(5*butc6.counter)+(6*butc7.counter)
+    s=butc2.counter*i
+    random.shuffle(l)
+    lable4=Label(root,text="Computer number:  ",fg="black",bg="red").place(x=900,y=250)
+    msg2=Message(root,text=l[0]).place(x=960,y=270)
+    lable5=Label(root,text="Score:",fg="black",bg="red").place(x=780,y=310)
+    msg3=Message(root,text=butc2.q).place(x=787,y=330)
+    if(l[0]==i):
+        
+        lable5=Label(root,text="Your Score:",bg="red").place(x=650,y=500)
+        msg6=Message(root,text=butc2.q,fg="black").place(x=680,y=520)
+        frame1=Frame(root,width=400,height=300,bg="darkgreen",command=quit(root)).place(x=650,y=200)
+def butc3():
+    i=2
+    butc3.counter+=1
+    butc3.q=(1*butc2.counter)+(2*butc3.counter)+(3*butc4.counter)+(4*butc5.counter)+(5*butc6.counter)+(6*butc7.counter)
+    lable3=Label(root,text="Your number:",fg="black",bg="red").place(x=650,y=250)
+    msg1=Message(root,text=i,fg="black").place(x=680,y=270)
+    l=[1,2,3,4,5,6]
+    s1=butc3.counter*i
+    random.shuffle(l)
+    lable4=Label(root,text="Computer number:  ",fg="black",bg="red").place(x=900,y=250)
+    msg2=Message(root,text=l[0]).place(x=960,y=270)
+    lable5=Label(root,text="Score:",fg="black",bg="red").place(x=780,y=310)
+    msg3=Message(root,text=butc3.q).place(x=787,y=330)
+    if(l[0]==i):
+        lable5=Label(root,text="Your Score:",bg="red").place(x=650,y=500)
+        msg6=Message(root,text=butc3.q,fg="black").place(x=680,y=520)
+        butc2.q=butc3.q
+        
+        frame1=Frame(root,width=400,height=300,bg="darkgreen",command=quit(root)).place(x=650,y=200)
 
-print("Enter your name")
-cont=input()
-print("Lets play the game")
-score=0
-l=[1,2,3,4,5,6,7,8,9]
-for i in range(30000):
-    print(cont,"turn:")
-    contval=int(input())
-    #print(contval)
-    if((0<contval)and(contval<=9)):
-        score=score+contval
-    print("My turn:")
+
+def butc4():
+    i=3
+    butc4.counter+=1
+    butc4.q=(1*butc2.counter)+(2*butc3.counter)+(3*butc4.counter)+(4*butc5.counter)+(5*butc6.counter)+(6*butc7.counter)
+    lable3=Label(root,text="Your number:",fg="black",bg="red").place(x=650,y=250)
+    msg1=Message(root,text=i,fg="black").place(x=680,y=270)
+    l=[1,2,3,4,5,6]
+    s2=butc4.counter*i
     random.shuffle(l)
-    print(l[0])
-    if(contval==l[0]):
-        print(cont,"score is:",score)
-        break
-score1=0
-for i in range(30000):
-    print(cont,"turn:")
-    contval=int(input())
-    print("My turn:")
+    lable4=Label(root,text="Computer number:  ",fg="black",bg="red").place(x=900,y=250)
+    msg2=Message(root,text=l[0]).place(x=960,y=270)
+    lable5=Label(root,text="Score:",fg="black",bg="red").place(x=780,y=310)
+    msg3=Message(root,text=butc4.q).place(x=787,y=330)
+    if(l[0]==i):
+        lable5=Label(root,text="Your Score:",bg="red").place(x=650,y=500)
+        msg6=Message(root,text=butc4.q,fg="black").place(x=680,y=520)
+        butc2.q=butc4.q
+        
+        
+        frame1=Frame(root,width=400,height=300,bg="darkgreen",command=quit(root)).place(x=650,y=200)
+
+
+def butc5():
+    i=4
+    butc5.counter+=1
+
+    butc5.q=(1*butc2.counter)+(2*butc3.counter)+(3*butc4.counter)+(4*butc5.counter)+(5*butc6.counter)+(6*butc7.counter)
+    lable3=Label(root,text="Your number:",fg="black",bg="red").place(x=650,y=250)
+    msg1=Message(root,text=i,fg="black").place(x=680,y=270)
+    l=[1,2,3,4,5,6]
+    s3=butc5.counter*i
     random.shuffle(l)
-    print(l[0])
-    score1=score1+l[0]
-    if(contval==l[0]):
-        print("My score is:",score1)
-        break
-if(score>score1):
-    print(cont,"is winner")
-elif(score==score1):
-    print("No one wins")
-else:
-    print("I'm winner")
-print("Thanks for playing")
-print("*-----------------------------------------------------*")
+    lable4=Label(root,text="Computer number:  ",fg="black",bg="red").place(x=900,y=250)
+    msg2=Message(root,text=l[0]).place(x=960,y=270)
+    lable5=Label(root,text="Score:",fg="black",bg="red").place(x=780,y=310)
+    msg3=Message(root,text=butc5.q).place(x=787,y=330)
+    if(l[0]==i):
+        lable5=Label(root,text="Your Score:",bg="red").place(x=650,y=500)
+        msg6=Message(root,text=butc5.q,fg="black").place(x=680,y=520)
+        butc2.q=butc5.q
+        frame1=Frame(root,width=400,height=300,bg="darkgreen",command=quit(root)).place(x=650,y=200)
+
+def butc6():
+    i=5
+    butc6.counter+=1
+    butc6.q=(1*butc2.counter)+(2*butc3.counter)+(3*butc4.counter)+(4*butc5.counter)+(5*butc6.counter)+(6*butc7.counter)
+    lable3=Label(root,text="Your number:",fg="black",bg="red").place(x=650,y=250)
+    msg1=Message(root,text=i,fg="black").place(x=680,y=270)
+    l=[1,2,3,4,5,6]
+    s=butc6.counter*i
+    random.shuffle(l)
+    lable4=Label(root,text="Computer number:  ",fg="black",bg="red").place(x=900,y=250)
+    msg2=Message(root,text=l[0]).place(x=960,y=270)
+    lable5=Label(root,text="Score:",fg="black",bg="red").place(x=780,y=310)
+    msg3=Message(root,text=butc6.q).place(x=787,y=330)
+    if(l[0]==i):
+        lable5=Label(root,text="Your Score:",bg="red").place(x=650,y=500)
+        msg6=Message(root,text=butc6.q,fg="black").place(x=680,y=520)
+        butc2.q=butc6.q
+        frame1=Frame(root,width=400,height=300,bg="darkgreen",command=quit(root)).place(x=650,y=200)
+def butc7():
+    i=6
+    butc7.counter+=1
+    butc7.q=(1*butc2.counter)+(2*butc3.counter)+(3*butc4.counter)+(4*butc5.counter)+(5*butc6.counter)+(6*butc7.counter)
+    lable3=Label(root,text="Your number:",fg="black",bg="red").place(x=650,y=250)
+    msg1=Message(root,text=i,fg="black").place(x=680,y=270)
+    l=[1,2,3,4,5,6]
+    s=butc7.counter*i
+    random.shuffle(l)
+    lable4=Label(root,text="Computer number:  ",fg="black",bg="red").place(x=900,y=250)
+    msg2=Message(root,text=l[0]).place(x=960,y=270)
+    lable5=Label(root,text="Score:",fg="black",bg="red").place(x=780,y=310)
+    msg3=Message(root,text=butc7.q).place(x=787,y=330)
+    if(l[0]==i):
+        lable5=Label(root,text="Your Score:",bg="red").place(x=650,y=500)
+        msg6=Message(root,text=butc7.q,fg="black").place(x=680,y=520)
+        butc2.q=butc7.q
+
+        frame1=Frame(root,width=400,height=300,bg="darkgreen",command=quit(root)).place(x=650,y=200)
+def buttonc8():
+    frame2=Frame(root,width=400,height=300,bg="darkblue").place(x=650,y=200)
+    frame3=Frame(root,width=80,height=40,bg="blue").place(x=790,y=650)
+    frame4=Frame(root,width=200,height=40,bg="blue").place(x=750,y=600)
+    buttonc2.q=0
+    buttonc3.q=0
+    buttonc4.q=0
+    buttonc5.q=0
+    buttonc6.q=0
+    buttonc7.q=0
+    butt2=Button(root,text="1 ",fg="black",bg="red",command=buttonc2).place(x=770,y=200)
+    buttonc2.counter=0
+    butt3=Button(root,text="2 ",fg="black",bg="red",command=buttonc3).place(x=790,y=200)
+    buttonc3.counter=0
+    butt4=Button(root,text="3 ",fg="black",bg="red",command=buttonc4).place(x=810,y=200)
+    buttonc4.counter=0
+    butt5=Button(root,text="4 ",fg="black",bg="red",command=buttonc5).place(x=830,y=200)
+    buttonc5.counter=0
+    butt6=Button(root,text="5 ",fg="black",bg="red",command=buttonc6).place(x=850,y=200)
+    buttonc6.counter=0
+    butt7=Button(root,text="6 ",fg="black",bg="red",command=buttonc7).place(x=870,y=200)
+    buttonc7.counter=0
     
+
+    
+def quit1(root):
+    s="Game End"
+    lable8=Label(root,text="Game End",bg='red', font=('times', 24, 'italic')).place(x=770,y=650)
+    
+def buttonc2():
+    i=1
+    
+    #buttonc2.counter=1
+    lable3=Label(root,text="Your number:",fg="black",bg="red").place(x=650,y=250)
+    msg1=Message(root,text=i,fg="black").place(x=680,y=270)
+    l=[1,2,3,4,5,6]
+    
+    
+    random.shuffle(l)
+    
+    
+    buttonc2.counter=l[0]
+    
+    buttonc2.q=buttonc2.q+buttonc2.counter+(buttonc3.counter)+(buttonc4.counter)+(buttonc5.counter)+(buttonc6.counter)+(buttonc7.counter)
+    
+    lable4=Label(root,text="Computer number:  ",fg="black",bg="red").place(x=900,y=250)
+    msg2=Message(root,text=l[0]).place(x=960,y=270)
+    lable5=Label(root,text="Score:",fg="black",bg="red").place(x=780,y=310)
+    msg3=Message(root,text=buttonc2.q).place(x=787,y=330)
+    if(l[0]==i):
+        
+        lable5=Label(root,text="Computer Score:",bg="red").place(x=955,y=500)
+        msg6=Message(root,text=buttonc2.q,fg="black").place(x=990,y=520)
+        if(buttonc2.q>butc2.q):
+            lable10=Label(root,font=('times', 20, 'italic'),text="Computer Won",bg="red").place(x=770,y=600)
+        elif(buttonc2.q<butc2.q):
+            lable10=Label(root,font=('times', 20, 'italic'),text="You Won",bg="red").place(x=770,y=600)
+        else:
+            lable10=Label(root,font=('times', 20, 'italic'),text="Match is Draa",bg="red").place(x=770,y=600)
+        frame2=Frame(root,width=400,height=300,bg="darkgreen",command=quit1(root)).place(x=650,y=200)
+        
+def buttonc3():
+    i=2
+    
+    #buttonc3.counter=1
+    lable3=Label(root,text="Your number:",fg="black",bg="red").place(x=650,y=250)
+    msg1=Message(root,text=i,fg="black").place(x=680,y=270)
+    l=[1,2,3,4,5,6]
+    
+    random.shuffle(l)
+    buttonc3.counter=l[0]
+    
+    buttonc3.q=buttonc3.q+buttonc2.counter+(buttonc3.counter)+(buttonc4.counter)+(buttonc5.counter)+(buttonc6.counter)+(buttonc7.counter)
+    lable4=Label(root,text="Computer number:  ",fg="black",bg="red").place(x=900,y=250)
+    msg2=Message(root,text=l[0]).place(x=960,y=270)
+    lable5=Label(root,text="Score:",fg="black",bg="red").place(x=780,y=310)
+    msg3=Message(root,text=buttonc3.q).place(x=787,y=330)
+    if(l[0]==i):
+        lable5=Label(root,text="Computer Score:",bg="red").place(x=955,y=500)
+        msg6=Message(root,text=buttonc3.q,fg="black").place(x=990,y=520)
+        if(buttonc3.q>butc2.q):
+            lable10=Label(root,font=('times', 24, 'italic'),text="Computer Won",bg="red").place(x=770,y=600)
+        elif(buttonc3.q<butc2.q):
+            lable10=Label(root,font=('times', 24, 'italic'),text="You Won",bg="red").place(x=770,y=600)
+        else:
+            lable10=Label(root,font=('times', 24, 'italic'),text="Match is Draa",bg="red").place(x=770,y=600)
+        frame2=Frame(root,width=400,height=300,bg="darkgreen",command=quit1(root)).place(x=650,y=200)
+def buttonc4():
+    i=3
+    
+    #buttonc4.counter=1
+    lable3=Label(root,text="Your number:",fg="black",bg="red").place(x=650,y=250)
+    msg1=Message(root,text=i,fg="black").place(x=680,y=270)
+    l=[1,2,3,4,5,6]
+    
+    random.shuffle(l)
+    buttonc4.counter=l[0]
+    
+    buttonc4.q=buttonc4.q+buttonc2.counter+(buttonc3.counter)+(buttonc4.counter)+(buttonc5.counter)+(buttonc6.counter)+(buttonc7.counter)
+    lable4=Label(root,text="Computer number:  ",fg="black",bg="red").place(x=900,y=250)
+    msg2=Message(root,text=l[0]).place(x=960,y=270)
+    lable5=Label(root,text="Score:",fg="black",bg="red").place(x=780,y=310)
+    msg3=Message(root,text=buttonc4.q).place(x=787,y=330)
+    if(l[0]==i):
+        lable5=Label(root,text="Computer Score:",bg="red").place(x=955,y=500)
+        msg6=Message(root,text=buttonc4.q,fg="black").place(x=990,y=520)
+        if(buttonc4.q>butc2.q):
+            lable10=Label(root,font=('times', 24, 'italic'),text="Computer Won",bg="red").place(x=770,y=600)
+        elif(buttonc4.q<butc2.q):
+            lable10=Label(root,font=('times', 24, 'italic'),text="You Won",bg="red").place(x=770,y=600)
+        else:
+            lable10=Label(root,font=('times', 24, 'italic'),text="Match is Draa",bg="red").place(x=770,y=600)
+        
+        frame2=Frame(root,width=400,height=300,bg="darkgreen",command=quit1(root)).place(x=650,y=200)
+def buttonc5():
+    i=4
+    
+    #buttonc5.counter=1
+    lable3=Label(root,text="Your number:",fg="black",bg="red").place(x=650,y=250)
+    msg1=Message(root,text=i,fg="black").place(x=680,y=270)
+    l=[1,2,3,4,5,6]
+    
+    random.shuffle(l)
+    buttonc5.counter=l[0]
+    
+    
+    buttonc5.q=buttonc5.q+(buttonc2.counter)+(buttonc3.counter)+(buttonc4.counter)+(buttonc5.counter)+(buttonc6.counter)+(buttonc7.counter)
+    lable4=Label(root,text="Computer number:  ",fg="black",bg="red").place(x=900,y=250)
+    msg2=Message(root,text=l[0]).place(x=960,y=270)
+    lable5=Label(root,text="Score:",fg="black",bg="red").place(x=780,y=310)
+    msg3=Message(root,text=buttonc5.q).place(x=787,y=330)
+    if(l[0]==i):
+        lable5=Label(root,text="Computer Score:",bg="red").place(x=955,y=500)
+        msg6=Message(root,text=buttonc5.q,fg="black").place(x=990,y=520)
+        if(buttonc5.q>butc2.q):
+            lable10=Label(root,font=('times', 24, 'italic'),text="Computer Won",bg="red").place(x=770,y=600)
+        elif(buttonc5.q<butc2.q):
+            lable10=Label(root,font=('times', 24, 'italic'),text="You Won",bg="red").place(x=770,y=600)
+        else:
+            lable10=Label(root,font=('times', 24, 'italic'),text="Match is Draa",bg="red").place(x=770,y=600)
+        frame2=Frame(root,width=400,height=300,bg="darkgreen",command=quit1(root)).place(x=650,y=200)
+def buttonc6():
+    i=5
+    
+    #buttonc6.counter=1
+    lable3=Label(root,text="Your number:",fg="black",bg="red").place(x=650,y=250)
+    msg1=Message(root,text=i,fg="black").place(x=680,y=270)
+    l=[1,2,3,4,5,6]
+    
+    random.shuffle(l)
+    buttonc6.counter=l[0]
+    
+    
+    buttonc6.q=buttonc6.q+(buttonc2.counter)+(buttonc3.counter)+(buttonc4.counter)+(buttonc5.counter)+(buttonc6.counter)+(buttonc7.counter)
+    lable4=Label(root,text="Computer number:  ",fg="black",bg="red").place(x=900,y=250)
+    msg2=Message(root,text=l[0]).place(x=960,y=270)
+    lable5=Label(root,text="Score:",fg="black",bg="red").place(x=780,y=310)
+    msg3=Message(root,text=buttonc6.q).place(x=787,y=330)
+    if(l[0]==i):
+        lable5=Label(root,text="Computer Score:",bg="red").place(x=955,y=500)
+        msg6=Message(root,text=buttonc6.q,fg="black").place(x=990,y=520)
+        if(buttonc6.q>butc2.q):
+            lable10=Label(root,font=('times', 24, 'italic'),text="Computer Won",bg="red").place(x=770,y=600)
+        elif(buttonc6.q<butc2.q):
+            lable10=Label(root,font=('times', 24, 'italic'),text="You Won",bg="red").place(x=770,y=600)
+        else:
+            lable10=Label(root,font=('times', 24, 'italic'),text="Match is Draa",bg="red").place(x=770,y=600)
+        frame2=Frame(root,width=400,height=300,bg="darkgreen",command=quit1(root)).place(x=650,y=200)
+def buttonc7():
+    i=6
+    
+    #buttonc7.counter=1
+    lable3=Label(root,text="Your number:",fg="black",bg="red").place(x=650,y=250)
+    msg1=Message(root,text=i,fg="black").place(x=680,y=270)
+    l=[1,2,3,4,5,6]
+    
+    random.shuffle(l)
+    buttonc7.counter=l[0]
+    
+    
+    buttonc7.q=buttonc7.q+(buttonc2.counter)+(buttonc3.counter)+(buttonc4.counter)+(buttonc5.counter)+(buttonc6.counter)+(buttonc7.counter)
+    lable4=Label(root,text="Computer number:  ",fg="black",bg="red").place(x=900,y=250)
+    msg2=Message(root,text=l[0]).place(x=960,y=270)
+    lable5=Label(root,text="Score:",fg="black",bg="red").place(x=780,y=310)
+    msg3=Message(root,text=buttonc7.q).place(x=787,y=330)
+    if(l[0]==i):
+        lable5=Label(root,text="Computer Score:",bg="red").place(x=955,y=500)
+        msg6=Message(root,text=buttonc7.q,fg="black").place(x=990,y=520)
+        if(buttonc7.q>butc2.q):
+            lable10=Label(root,font=('times', 24, 'italic'),text="Computer Won",bg="red").place(x=770,y=600)
+        elif(buttonc7.q<butc2.q):
+            lable10=Label(root,font=('times', 24, 'italic'),text="You Won",bg="red").place(x=770,y=600)
+        else:
+            lable10=Label(root,font=('times', 24, 'italic'),text="Match is Draa",bg="red").place(x=770,y=600)
+        frame2=Frame(root,width=400,height=300,bg="darkgreen",command=quit1(root)).place(x=650,y=200)
+root=Tk()
+sum=0
+root.title("Hand Cricket")
+root.configure(background="blue")
+msg0=Message(root,text="        Hi,\nWelcome To \nHand Cricket Game")
+msg0.config(bg='violet', font=('times', 30, 'italic'))
+msg0.pack()
+lable2=Label(root,text="Let's play the game",fg="black",bg="red", font=('times', 12, 'italic')).place(x=650,y=230)
+lable3=Label(root,text="Enter name:",fg="black",bg="red",font=('times', 12, 'italic')).place(x=650,y=260)
+lable4=Label(root,text="Press Bat Button for Batting",fg="black",bg="red",font=('times', 12, 'italic')).place(x=650,y=310)
+text1=Text(root,height=1,width=35,fg="black",bg="red",font=('times', 12, 'italic')).place(x=650,y=280)
+frame1=Frame(root,width=300,height=200)
+but1=Button(root,text="   Bat   ",fg="black",bg="red",font=('times', 12, 'italic'),command=butc1).place(x=650,y=340)
+msg=Message(root,text="Created By Chitakana Harsha Vardhan",bg='violet', font=('times', 16, 'italic')).place(x=1371,y=722)
+root.mainloop()
